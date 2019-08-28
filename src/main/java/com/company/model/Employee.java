@@ -9,8 +9,8 @@ public class Employee {
 	private String employeeId;
 	private String name;
 	private String age;
-	
-	private Employee manager;
+	//private Employee manager;
+	private String managerId;
 	private long salary;
 	
 	
@@ -18,24 +18,16 @@ public class Employee {
 		this.employeeId = employeeId;
 		this.name = name;
 		this.age = age;
-		this.manager = manager;
+		this.managerId = managerId;
 		this.salary = salary;
 	}
 	
-	public Employee getManager() {
-		return manager;
-	}
-
-	public void setManager(Employee manager) {
-		this.manager = manager;
-	}
-
 	public Employee() {
 	}
 
 	@Override
 	public String toString() {
-		return "Employee [employeeId=" + employeeId + ", name=" + name + ", age=" + age + ", manager=" + manager
+		return "Employee [employeeId=" + employeeId + ", name=" + name + ", age=" + age + ", manager=" + managerId
 				+ ", salary=" + salary + "]";
 	}
 	
@@ -57,7 +49,12 @@ public class Employee {
 	public void setAge(String age) {
 		this.age = age;
 	}
-	
+	public String getManagerId() {
+		return managerId;
+	}
+	public void setManagerId(String managerId) {
+		this.managerId = managerId;
+	}
 	public long getSalary() {
 		return salary;
 	}
