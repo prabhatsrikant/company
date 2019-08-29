@@ -1,5 +1,7 @@
 package com.company.model;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -8,27 +10,31 @@ public class Employee {
 	@Id
 	private String employeeId;
 	private String name;
-	private String age;
-	//private Employee manager;
-	private String managerId;
-	private long salary;
-	
-	
-	public Employee(String employeeId, String name, String age, String managerId, long salary) {
-		this.employeeId = employeeId;
-		this.name = name;
-		this.age = age;
-		this.managerId = managerId;
-		this.salary = salary;
-	}
+	private OfficeInfo officeInfo;
+	private List<AddressInfo> addressInfo;
+	private List<ContactInfo> contactInfo;
+	private PersonalInfo personalInfo;
+	private BankInfo bankInfo;
 	
 	public Employee() {
 	}
 
+	public Employee(String employeeId, String name, OfficeInfo officeInfo, List<AddressInfo> addressInfo,
+			List<ContactInfo> contactInfo, PersonalInfo personalInfo, BankInfo bankInfo) {
+		this.employeeId = employeeId;
+		this.name = name;
+		this.officeInfo = officeInfo;
+		this.addressInfo = addressInfo;
+		this.contactInfo = contactInfo;
+		this.personalInfo = personalInfo;
+		this.bankInfo = bankInfo;
+	}
+
 	@Override
 	public String toString() {
-		return "Employee [employeeId=" + employeeId + ", name=" + name + ", age=" + age + ", manager=" + managerId
-				+ ", salary=" + salary + "]";
+		return "Employee [employeeId=" + employeeId + ", name=" + name + ", officeInfo=" + officeInfo + ", addressInfo="
+				+ addressInfo + ", contactInfo=" + contactInfo + ", personalInfo=" + personalInfo + ", bankInfo="
+				+ bankInfo + "]";
 	}
 	
 	public String getEmployeeId() {
@@ -43,25 +49,36 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getAge() {
-		return age;
+	public OfficeInfo getOfficeInfo() {
+		return officeInfo;
 	}
-	public void setAge(String age) {
-		this.age = age;
+	public void setOfficeInfo(OfficeInfo officeInfo) {
+		this.officeInfo = officeInfo;
 	}
-	public String getManagerId() {
-		return managerId;
+	public List<AddressInfo> getAddressInfo() {
+		return addressInfo;
 	}
-	public void setManagerId(String managerId) {
-		this.managerId = managerId;
+	public void setAddressInfo(List<AddressInfo> addressInfo) {
+		this.addressInfo = addressInfo;
 	}
-	public long getSalary() {
-		return salary;
+	public List<ContactInfo> getContactInfo() {
+		return contactInfo;
 	}
-	public void setSalary(long salary) {
-		this.salary = salary;
+	public void setContactInfo(List<ContactInfo> contactInfo) {
+		this.contactInfo = contactInfo;
 	}
-	
+	public PersonalInfo getPersonalInfo() {
+		return personalInfo;
+	}
+	public void setPersonalInfo(PersonalInfo personalInfo) {
+		this.personalInfo = personalInfo;
+	}
+	public BankInfo getBankInfo() {
+		return bankInfo;
+	}
+	public void setBankInfo(BankInfo bankInfo) {
+		this.bankInfo = bankInfo;
+	}
 	
 
 }
